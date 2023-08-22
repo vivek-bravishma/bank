@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Car Loan",
+    "bgImage": "assets/images/carLoanBg.jpg",
+    "heading": "Your choices are limitless with our Car Loan offers",
+    "features": [
+      {
+        "img": "assets/icons/coins.png",
+        "title": "Loan repayment up to 60 months"
+      },
+      {
+        "img": "assets/icons/docs.png",
+        "title": "Finance used cars up to 12 years old"
+      },
+      {
+        "img": "assets/icons/trend.png",
+        "title": "Flexible repayment options"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Home Loans",
+    "bgImage": "assets/images/homeLoanBg.jpg",
+    "heading": "Unlock the doorway to your dream home",
+    "features": [
+      {
+        "img": "assets/icons/coins.png",
+        "title": "Loan repayment up to 60 months"
+      },
+      {
+        "img": "assets/icons/docs.png",
+        "title": "Finance up to 85% of property value"
+      },
+      {
+        "img": "assets/icons/trend.png",
+        "title": "Flexible repayment options"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Personal Loan",
+    "bgImage": "assets/images/personalLoanBg.jpg",
+    "heading": "Get a New Personal Loan with attractive interest rates",
+    "features": [
+      {
+        "img": "assets/icons/coins.png",
+        "title": "Loan repayment up to 60 months"
+      },
+      {
+        "img": "assets/icons/dollar.png",
+        "title": "Money transferred instantly"
+      },
+      {
+        "img": "assets/icons/trend.png",
+        "title": "Flexible repayment options"
+      }
+    ]
+  }
+]
