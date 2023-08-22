@@ -20,13 +20,16 @@ const Product = () => {
     backgroundImage: `url(${baseUrl}/${bgImage})`,
   };
   return (
-    <div className="product-container" style={bgImageStyle}>
-      <h4 className="product-title">{title}</h4>
-      <div className="product-heading">{heading} </div>
-      <div className="product-features-container">
-        {features.map((feature) => (
-          <FeatureCard data={feature} />
-        ))}
+    <div className="product-container">
+      <section className="product-background" style={bgImageStyle}></section>
+      <div className="product-content">
+        <h4 className="product-title">{title}</h4>
+        <div className="product-heading">{heading} </div>
+        <div className="product-features-container">
+          {features.map((feature) => (
+            <FeatureCard data={feature} />
+          ))}
+        </div>
       </div>
     </div>
   );
