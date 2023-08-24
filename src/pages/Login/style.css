@@ -1,13 +1,22 @@
 .login-container {
-  position: relative;
-  height: calc(100vh - 60px);
+  /* position: relative;
+  height: calc(100vh - 60px); */
 }
 
-.login-bg-container {
+/* .login-bg-container {
   width: 100%;
   height: calc(75vh - 60px);
   padding: 50px;
   background-size: cover;
+} */
+
+.login-bg-container {
+  height: calc(75vh - 60px);
+}
+
+.login-content-container{
+  background-color: rgba(0, 0, 0, .1);
+
 }
 
 .page-logo {

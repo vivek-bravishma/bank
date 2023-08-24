@@ -1,9 +1,18 @@
-.home-container {
+/* .home-container {
   width: 100%;
   height: calc(100vh - 60px);
-  background: red;
   padding: 50px;
   background-size: cover;
+} */
+
+.home-container {
+}
+
+.home-bg-container {
+}
+
+.home-content-container {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .home-heading {
@@ -12,7 +21,7 @@
   font-weight: 500;
 }
 
-.sub-heading{
+.sub-heading {
   margin: 10px;
   font-weight: 600;
   margin-bottom: 40px;

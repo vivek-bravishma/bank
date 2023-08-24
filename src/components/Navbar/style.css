@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  position: relative;
 }
 
 .navbar {
@@ -18,7 +19,7 @@
   height: 100%;
 }
 
-.logo-img{
+.logo-img {
   height: 100%;
 }
 
@@ -34,7 +35,7 @@
   justify-content: space-between;
   list-style-type: none;
   list-style: none;
-  gap:20px
+  gap: 20px;
 }
 
 .nav-elements ul li:not(:last-child) {
@@ -48,8 +49,13 @@
   text-decoration: none;
 }
 
+.nav-elements ul li a {
+  display: block;
+  width: 100%;
+}
+
 .nav-elements ul a i {
-  margin: 0 10px ;
+  margin: 0 10px;
 }
 
 .nav-elements ul a.active {
@@ -92,13 +98,17 @@
   }
 
   .nav-elements.active {
+    position: absolute;
     width: 270px;
+    width: 60%;
+    z-index: 5;
   }
 
   .nav-elements ul {
     display: flex;
     flex-direction: column;
-    gap:35px
+    gap: 35px;
+    padding: 20px 40px;
   }
 
   .nav-elements ul li {

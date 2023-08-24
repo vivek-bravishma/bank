@@ -10,18 +10,18 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
-import Services from "./pages/Services";
+// import Services from "./pages/Services";
 import Login from "./pages/Login";
 
-const PrivateRoute = ({
-  path,
-  component: Component,
-  isAuthenticated,
-  ...rest
-}) => {
-  const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
-  return userPresent ? Component : <Navigate to="/login" replace />;
-};
+// const PrivateRoute = ({
+//   path,
+//   component: Component,
+//   isAuthenticated,
+//   ...rest
+// }) => {
+//   const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
+//   return userPresent ? Component : <Navigate to="/login" replace />;
+// };
 
 const AuthRoute = ({ component: Component, isAuthenticated, ...rest }) => {
   const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
@@ -45,6 +45,10 @@ const routes = [
   {
     path: "/product/:productId",
     element: <Product/>,
+  },
+  {
+    path: "/services",
+    element: <Home/>,
   },
   // {
   //   path: "/about",

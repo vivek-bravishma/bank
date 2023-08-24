@@ -6,9 +6,6 @@ const FeatureCard = ({ data }) => {
 
   let baseUrl = new URL(window.location.href).origin;
 
-  const bgImageStyle = {
-    backgroundImage: `url(${baseUrl}/${img})`,
-  };
   return (
     <div className="feature-card-container">
       <img

@@ -22,20 +22,21 @@ const Navbar = () => {
         <div className="menu-icon" onClick={handleShowNavbar}>
           <Hamburger />
         </div>
-        <div className={`nav-elements  ${showNavbar && "active"}`}>
+        <div className={`nav-elements ${showNavbar && "active"}`}>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/" onClick={handleShowNavbar}>Home</NavLink>
             </li>
             <li>
-              <NavLink to="/products">Products</NavLink>
+              <NavLink to="/products" onClick={handleShowNavbar}>Products</NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/services" onClick={handleShowNavbar}>Services</NavLink>
             </li>
             <li>
-              <NavLink to="/login">user 
-              <i className="fa fa-user" aria-hidden="true"></i>
+              <NavLink to="/login" onClick={handleShowNavbar}>
+                user
+                <i className="fa fa-user" aria-hidden="true"></i>
               </NavLink>
             </li>
           </ul>
