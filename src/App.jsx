@@ -5,26 +5,16 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
-
-import Home from "./pages/Home";
 import Product from "./pages/Product";
-import Products from "./pages/Products";
-// import Services from "./pages/Services";
+import Car from "./pages/Products/Car";
+import HomeLoan from "./pages/Products/Home";
+import Personal from "./pages/Products/Personal";
+import Home from "./pages/Home";
+import Header from "./components/Header";
 import Login from "./pages/Login";
 
-// const PrivateRoute = ({
-//   path,
-//   component: Component,
-//   isAuthenticated,
-//   ...rest
-// }) => {
-//   const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
-//   return userPresent ? Component : <Navigate to="/login" replace />;
-// };
-
 const AuthRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-  const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
+  const userPresent = JSON.parse(localStorage.getItem("user")) ? true : false;
   console.log("user==> ", userPresent);
   return userPresent ? <Navigate to="/" /> : Component;
 };
@@ -40,15 +30,19 @@ const routes = [
   },
   {
     path: "/products",
-    element: <Products />,
+    element: <Product />,
   },
   {
-    path: "/product/:productId",
-    element: <Product/>,
+    path: "/car-loan",
+    element: <Car />,
   },
   {
-    path: "/services",
-    element: <Home/>,
+    path: "/home-loan",
+    element: <Personal />,
+  },
+  {
+    path: "/personal-loan",
+    element: <HomeLoan />,
   },
   // {
   //   path: "/about",
@@ -68,7 +62,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
+        <Header />
         <Routes>
           {routes.map((route, index) => (
             <Route

@@ -1,33 +1,29 @@
 import React from "react";
-import homeBg from "../../assets/images/home.png";
-import "./style.css";
-import logo from "../../assets/images/logoBeyondBank.png";
+// import homeBg from "../../assets/images/home.png";
+// import "./style.css";
+// import logo from "../../assets/images/logoBeyondBank.png";
 import { Link } from "react-router-dom";
+import Call from "../../components/Call";
 
 const Home = () => {
-  console.log("homegb==> ", homeBg, typeof homeBg);
   return (
-    // <div className="home-container">
-    <div className="main-container home-container">
-      <section
-        className="bg-container home-bg-container"
-        style={{ backgroundImage: `url(${homeBg})` }}
-      ></section>
-      <div className="content-container home-content-container">
-        <img src={logo} alt="logo" />
-        <h1 className="home-heading">
-          Customer Service <br />
-          that is beyong good
-        </h1>
-        <p className="sub-heading">
-          We provide you with exceptional banking solutions
-        </p>
-
-        <Link to="/product/1" className="see-prod-link">
-          SEE PRODUCTS
-        </Link>
+    <>
+      <Call />
+      <div className="screen1-bg">
+        <div className="contener clear">
+          <img src="/assets/images/screen-1-text.png" alt="" className="img-responsive" />
+          <Link to="/car-loan">
+            <img
+              src="/assets/images/screen-1-btn.png"
+              className="img-responsive"
+              alt=""
+            />
+          </Link>
+        </div>
       </div>
-    </div>
+      <nav></nav>
+      <section></section>
+    </>
   );
 };
 

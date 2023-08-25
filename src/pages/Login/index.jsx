@@ -1,7 +1,7 @@
 import React from "react";
-import loginBg from "../../assets/images/loginBg.png";
-import "./style.css";
-import logo from "../../assets/images/logoBeyondBank.png";
+// import loginBg from "../../assets/images/loginBg.png";
+// import "./style.css";
+// import logo from "../../assets/images/logoBeyondBank.png";
 
 // const Login = () => {
 //   return (
@@ -22,11 +22,11 @@ const Login = () => {
     <div className="main-container login-container">
       <section
         className="bg-container login-bg-container"
-        style={{ backgroundImage: `url(${loginBg})` }}
+        // style={{ backgroundImage: `url(${loginBg})` }}
       ></section>
 
       <div className="content-container login-content-container">
-        <img className="page-logo" src={logo} alt="logo" />
+        {/* <img className="page-logo" src={logo} alt="logo" /> */}
 
         <LoginForm />
       </div>
@@ -57,3 +57,14 @@ const LoginForm = () => {
 };
 
 export default Login;
+
+
+// import React from 'react'
+
+// const Login = () => {
+//   return (
+//     <div>Login</div>
+//   )
+// }
+
+// export default Login
