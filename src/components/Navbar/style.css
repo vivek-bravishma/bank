@@ -12,7 +12,9 @@
 .navbar {
   height: 60px;
   background-color: #00498e;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
@@ -42,7 +44,7 @@
   /* margin-right: 60px; */
 }
 
-.nav-elements ul a {
+.nav-elements ul a ,.nav-login-btn {
   font-size: 16px;
   font-weight: 400;
   color: #fff;
@@ -54,7 +56,7 @@
   width: 100%;
 }
 
-.nav-elements ul a i {
+.nav-elements ul i {
   margin: 0 10px;
 }
 
@@ -74,6 +76,31 @@
   background-color: #fff;
 }
 
+.dropdown {
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  /* right: 0; */
+  left: -7px;
+  background: #fff;
+  color: black;
+  /* padding: 0.5rem; */
+}
+
+.dropdown-item {
+  padding: 0.6rem 0.5rem;
+  cursor: pointer;
+}
+
+.nav-mob-user-elm{
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav-elements ul li:not(:last-child) {
     /* margin-right: 30px; */
@@ -81,14 +108,21 @@
 }
 
 @media (max-width: 600px) {
-  .menu-icon {
+  .nav-logo {
+    display: none;
+  }
+  .nav-mob-user-elm{
     display: block;
+  }
+  .menu-icon {
+    display: flex;
     cursor: pointer;
   }
 
   .nav-elements {
     position: absolute;
-    right: 0;
+    /* right: 0; */
+    left: 0;
     top: 60px;
     background-color: #00498e;
     width: 0px;
@@ -114,5 +148,9 @@
   .nav-elements ul li {
     margin-right: unset;
     /* margin-top: 22px; */
+  }
+
+  .nav-user-lmnt {
+    display: none;
   }
 }

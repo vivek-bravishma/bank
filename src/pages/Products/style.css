@@ -1,4 +1,5 @@
 .products-container {
+  height: fit-content;
 }
 
 .products-content-container {
@@ -7,13 +8,8 @@
   flex-direction: column;
   /* align-items: center;  */
   gap: 2.2rem;
-}
-
-.products-heading {
-  font-size: 2.2rem;
-  text-align: center;
-  font-weight: 600;
-  text-decoration: underline;
+  /* max-width: 1200px; */
+  padding: 50px 0;
 }
 
 .products-card-container {
@@ -21,44 +17,80 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 3.5rem;
+}
+
+.home-feature-row {
+}
+.products-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.products-heading-container p {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: grey;
+  margin: 0;
+  line-height: 1;
+  position: relative;
+}
+.products-heading-container p::after {
+  content: "";
+  width: 43px;
+  height: 3px;
+  background-color: #00498e;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.products-heading-container h2 {
+  margin: 0;
+  color: black;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .products-heading-container h2 {
+    font-size: 55px;
+  }
+}
+@media (max-width: 1000px) {
+  .products-heading-container h2 {
+    font-size: 45px;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 768px) {
   .products-card-container {
     flex-direction: column;
   }
+
+  .products-heading-container h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 600px) {
-  .menu-icon {
-    display: block;
-    cursor: pointer;
+  .products-heading-container h2 {
+    font-size: 35px;
+    font-weight: 600;
   }
+}
 
-  .nav-elements {
-    position: absolute;
-    right: 0;
-    top: 60px;
-    background-color: #00498e;
-    width: 0px;
-    height: calc(100vh - 60px);
-    transition: all 0.3s ease-in;
-    overflow: hidden;
-  }
-
-  .nav-elements.active {
-    width: 270px;
-  }
-
-  .nav-elements ul {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .nav-elements ul li {
-    margin-right: unset;
-    /* margin-top: 22px; */
+@media (max-width: 400px) {
+  .products-heading-container h2 {
+    font-size: 30px;
+    font-weight: 600;
   }
 }

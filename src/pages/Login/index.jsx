@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import loginBg from "../../assets/images/loginBg.png";
 import "./style.css";
 import logo from "../../assets/images/logoBeyondBank.png";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
+import { useAuth } from "../../hooks/useAuth";
 
 // const Login = () => {
 //   return (
@@ -35,9 +38,28 @@ const Login = () => {
 };
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  // const { login } = useAuth();
+  const { login } = useContext(UserContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // setUser({
+    //   id: "1",
+    //   name: "Alex",
+    //   email: "alex@gmail.com",
+    // });
+    login({
+      id: "1",
+      name: "Alex",
+      email: "alex@gmail.com",
+    });
+    navigate("/");
+  };
+
   return (
     // <div className="login-form">
-    <form className="login-form">
+    <form className="login-form" onSubmit={handleLogin}>
       <h3 className="form-title">SIGN IN</h3>
       <input type="text" name="username" id="username" placeholder="Username" />
       <input

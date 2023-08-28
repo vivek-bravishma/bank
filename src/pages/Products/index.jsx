@@ -14,7 +14,8 @@ const Products = () => {
 
       <div className="content-container products-content-container">
         <div className="products-heading-container">
-          <div className="products-heading">OUR PRODUCTS</div>
+          <p>What We’re Offering</p>
+          <h2>All Loans Services</h2>
         </div>
         <div className="products-card-container">
           {products.map((product) => (

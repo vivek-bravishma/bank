@@ -12,6 +12,12 @@ import Product from "./pages/Product";
 import Products from "./pages/Products";
 // import Services from "./pages/Services";
 import Login from "./pages/Login";
+// import { useAuth } from "./hooks/useAuth";
+// import { AuthContext } from "./context/AuthContext";
+// import { AuthProvider } from "./context/AuthContext";
+import { useMemo, useState } from "react";
+import { UserContext } from "./context/UserContext";
+import { useAuth } from "./hooks/useAuth";
 
 // const PrivateRoute = ({
 //   path,
@@ -44,11 +50,11 @@ const routes = [
   },
   {
     path: "/product/:productId",
-    element: <Product/>,
+    element: <Product />,
   },
   {
     path: "/services",
-    element: <Home/>,
+    element: <Home />,
   },
   // {
   //   path: "/about",
@@ -65,21 +71,30 @@ const routes = [
 ];
 
 function App() {
+  // const [user, setUser] = useState(null);
+  // const providerVal = useMemo(() => ({ user, setUser }), [user, setUser]);
+  const { user, login, logout } = useAuth();
+  const providerVal = { user, login, logout };
+
   return (
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={`/${route.path}`}
-              element={route.element}
-            />
-          ))}
-        </Routes>
-      </Router>
-    </div>
+    // <AuthContext.Provider value={{ user, login, logout }}>
+    <UserContext.Provider value={providerVal}>
+      <div className="App">
+        <Router>
+          <Navbar />
+          <Routes>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={`/${route.path}`}
+                element={route.element}
+              />
+            ))}
+          </Routes>
+        </Router>
+      </div>
+    </UserContext.Provider>
+    // </AuthContext.Provider>
   );
 }
 

@@ -17,7 +17,9 @@ const ProductCard = ({ productInfo }) => {
         <div className="product-card-title"> {title} </div>
         <div className="product-card-heading">{heading} </div>
       </div>
-      <Link to={productUrl}>Show More</Link>
+      <Link to={productUrl}>
+      <i className="fa-solid fa-right-long"></i>
+      </Link>
     </div>
   );
 };

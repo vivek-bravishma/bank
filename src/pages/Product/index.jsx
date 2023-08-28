@@ -4,6 +4,7 @@ import "./style.css";
 
 import products from "../../utils/products.json";
 import FeatureCard from "../../components/FeatureCard";
+import logo from "../../assets/images/logoBeyondBank.png";
 
 const Product = () => {
   let { productId } = useParams();
@@ -37,16 +38,22 @@ const Product = () => {
 
   return (
     <div className="main-container product-container">
-      <section className="bg-container product-bg-container" style={bgImageStyle}></section>
+      <section
+        className="bg-container product-bg-container"
+        style={bgImageStyle}
+      ></section>
       <div className="content-container product-content">
+        <img className="page-logo" src={logo} alt="logo" />
+      </div>
+      <section className="product-info">
         <h4 className="product-title">{title}</h4>
         <div className="product-heading">{heading} </div>
         <div className="product-features-container">
-          {features.map((feature) => (
-            <FeatureCard data={feature} />
+          {features.map((feature,index) => (
+            <FeatureCard data={feature} key={index}/>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 };
