@@ -1,13 +1,23 @@
-@charset "utf-8";
-
 /*====================================================================
 COMMEN CSS
 ==================================================================*/
+
 html{ height: 100vh; }
 body {
 	margin: 0px;
 	padding: 0px;
     min-height: 100%;
+}
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 h1,h2,h3,h4,h5,h6,
 ul,ol,li,
@@ -24,7 +34,7 @@ p {
 img {
 	border: 0;
 }
-.img-responsive{ max-width: 100%; }
+.img-responsive{ max-width: 100%; margin: 0 auto; }
 a {
 	text-decoration: none;
 	outline: none;
@@ -62,7 +72,6 @@ HEADER CSS
 ==================================================================*/
 header {
 	background: #00498e;
-   
 }
 .contener{
     max-width: 1250px;
@@ -71,35 +80,48 @@ header {
     padding-right: 10px;
 }
 
-nav {
-	
-}
+
+.login-box{ margin-top: -100px;}
+.login-box img{ max-width: 200px; }
 .logo-img{max-width:70px;  padding-top: 10px;}
 .menu img{ max-width:65px; margin-top: 5px;  }
-/* .screen1-bg{ background: url(/assets/images/images/screen-1.png) no-repeat left top; background-size: 100%; min-height: calc(100vh - 70px); } */
-.screen1-bg{ background: url('./assets/images/screen-1.png') no-repeat left top; background-size: 100%; min-height: calc(100vh - 70px); }
-.product{ display: flex; }
-.product .width33{ width: 33.3%; }
+/* .screen1-bg{ background: url(../images/screen-1.png) no-repeat right top; background-size: cover; padding-bottom: 30px; } */
+.screen1-bg{ background: url("./assets/images/screen-1.png") no-repeat right top; background-size: cover; padding-bottom: 30px; }
+.width33{ width: 100%; }
+.width50{ width: 100%; }
+.width25{width: 100%;}
 .mt25 { margin-top: 25px;}
 .call{ z-index: 9; position: fixed; right: 0; bottom: 100px; }
-/*====================================================================
-FOOTER CSS
-==================================================================*/
-footer {
-	
-}
+.gray-bg{ background: #eff2f6; padding: 50px 0px; }
+.gray-bg.ptp-20{ background: #eff2f6; padding: 20px 0px; }
+/* .pro-bg{ background: #fff url(../images/pro-bg.png) repeat-x right bottom;  padding-bottom: 30px; } */
+.pro-bg{ background: #fff url('./assets/images/pro-bg.png') repeat-x right bottom;  padding-bottom: 30px; }
+
 /*====================================================================
 CONTENT CSS
 ==================================================================*/
-section {
-	
-}
-
-
-
+.d-none{ display: none;} 
+.d-block{ display: block;}
+.xxs-block{ display: block; }
+.xs-block{ display: block;}
+.ssm-none{ display: none;}
+.sm-block{ display: none;}
+.lg-block{ display: none;}
+.mt-33{ margin-top: -15px; }
+.xs-max-width{ max-width: 70%;}
 
 @media (min-width: 576px) {
+  .xxs-block{ display: none;}
+    .ssm-none{ display: block;}
+    .w-100{ width: 100%; }
+    .d-flex { display: flex;}
+    .width33{ width: 33.3%; }
+    .width50{ width: 50%; }
+    .width25{width: 25%;}
+    .max-width{ width:70%; }
+    .xs-max-width{ max-width: 100%;}
     /*==Header CSS== */
+     .login-box img{ max-width:250px; }
     .logo-img{max-width:80px; }
     .menu img{ max-width:70px; margin-top: 5px; padding-left: 10px; padding-right: 10px;  }
     /*==Banner CSS== */
@@ -110,10 +132,14 @@ section {
 }
 
 @media (min-width: 768px) {
-    .contener{
-    padding-left: 25px;
-    padding-right: 25px;
-}
+ 
+    .xs-block{ display: none;}
+.sm-block{ display: block;}
+.lg-block{ display: none;}
+    
+    .login-box img{ max-width:300px; }
+    .login-box{ margin-top: -150px;}
+    .contener{ padding-left: 25px; padding-right: 25px;}
     /*==Header CSS== */
  .logo-img{max-width:146px; }
     .menu img{ max-width:100px; margin-top: 5px;  }
@@ -125,8 +151,13 @@ section {
 }
 
 @media (min-width: 992px) {
+    
     /*==Header CSS== */
-
+     .xs-block{ display: none;}
+.sm-block{ display: none;}
+.lg-block{ display: block;}
+    .login-box img{ max-width:inherit; }
+    .screen1-bg{padding-bottom: 80px; }
     /*==Banner CSS== */
 
     /*==Content CSS== */
@@ -135,10 +166,12 @@ section {
 }
 
 @media (min-width: 1100px) {
+      .mt-33{ margin-top: -15px; }
+    .w-100-lg{ width: 100%;}
     /*==Header CSS== */
-
+.login-box{ margin-top: -200px;}
     /*==Banner CSS== */
-
+.w-100{ width: auto; }
     /*==Content CSS== */
 
     /*==Footer CSS== */
