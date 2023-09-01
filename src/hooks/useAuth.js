@@ -7,18 +7,18 @@ export const useAuth = () => {
   const { getItem } = useLocalStorage();
 
   const login = (user) => {
-    console.log("loging in");
+    // console.log("loging in");
     addUser(user);
   };
 
   const logout = () => {
-    console.log("loging out");
+    // console.log("loging out");
     removeUser();
   };
 
   useEffect(() => {
     const user = getItem("user");
-    console.log("user=> ", user);
+    // console.log("user=> ", user);
     if (user) {
       addUser(JSON.parse(user));
     }

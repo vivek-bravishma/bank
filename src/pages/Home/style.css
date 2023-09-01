@@ -53,7 +53,8 @@
 
 .home-feature-content-container {
   max-width: 1200px;
-  padding: 2%;
+  /* padding: 2%; */
+  padding: 4vw;
 }
 
 .home-feature-row {
@@ -104,13 +105,15 @@
   line-height: 1.88;
   color: gray;
   margin-bottom: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .home-feature-card-row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  /* margin-right: -15px;
+  margin-left: -15px; */
   justify-content: space-between;
 }
 .home-feature-card {
@@ -140,7 +143,8 @@
     gap: 25px;
   }
   .home-feature-card {
-    width: 85%;
+    width: 100%;
+    /* width: 85%; */
   }
   .home-feature-heading-cont h2 {
     font-size: 45px;

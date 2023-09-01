@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // import Call from "../../components/Call";
 
 const Home = () => {
-  console.log("homegb==> ", homeBg, typeof homeBg);
+  // console.log("homegb==> ", homeBg, typeof homeBg);
   return (
     // <div className="home-container">
     <div className="main-container home-container">

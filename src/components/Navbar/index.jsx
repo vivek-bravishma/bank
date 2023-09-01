@@ -40,41 +40,72 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      { user && <Call />} 
+    <>
+      {user ? (
+        <nav className="navbar">
+          {user && <Call user={user} />}
 
-      <div className="nav-container">
-        <div className="logo nav-logo">
-          <NavLink to="/">
-            <img className="logo-img" src={logo} alt="beyond bank logo" />
-          </NavLink>
-        </div>
-        <div className="menu-icon" onClick={handleShowNavbar}>
-          <Hamburger />
-        </div>
-        <div className={`nav-elements ${showNavbar && "active"}`}>
-          <ul>
-            <li>
-              <NavLink to="/" onClick={handleShowNavbar}>
-                Home
+          <div className="nav-container">
+            <div className="logo nav-logo">
+              <NavLink to="/">
+                <img className="logo-img" src={logo} alt="beyond bank logo" />
               </NavLink>
-            </li>
-            <li>
-              <NavLink to="/products" onClick={handleShowNavbar}>
-                Products
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/services" onClick={handleShowNavbar}>
-                Services
-              </NavLink>
-            </li>
-            <li className="nav-user-lmnt">
-              {/* <NavLink to="/login" onClick={handleShowNavbar}>
-                Login
-                <i className="fa fa-user" aria-hidden="true"></i>
-              </NavLink> */}
-              {/* {console.log("user==================== ", user)} */}
+            </div>
+            <div className="menu-icon" onClick={handleShowNavbar}>
+              <Hamburger />
+            </div>
+            <div className={`nav-elements ${showNavbar && "active"}`}>
+              <ul>
+                <li>
+                  <NavLink to="/" onClick={handleShowNavbar}>
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/products" onClick={handleShowNavbar}>
+                    Products
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/services" onClick={handleShowNavbar}>
+                    Services
+                  </NavLink>
+                </li>
+                <li className="nav-user-lmnt">
+                  {/* <NavLink to="/login" onClick={handleShowNavbar}>
+            Login
+            <i className="fa fa-user" aria-hidden="true"></i>
+          </NavLink> */}
+                  {/* {console.log("user==================== ", user)} */}
+                  {user ? (
+                    <>
+                      <div className="dropdown" onClick={toggleDropdown}>
+                        {user?.name}
+                        <i className="fa fa-user" aria-hidden="true"></i>
+
+                        {isDropdownOpen && (
+                          <div
+                            className="dropdown-menu"
+                            // onClick={() => setUser(null)}
+                            onClick={handleLogout}
+                          >
+                            <div className="logout-btn dropdown-item">
+                              Logout
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    <NavLink to="/login" onClick={handleShowNavbar}>
+                      Login
+                      <i className="fa fa-user" aria-hidden="true"></i>
+                    </NavLink>
+                  )}
+                </li>
+              </ul>
+            </div>
+            <div className="nav-mob-user-elm">
               {user ? (
                 <>
                   <div className="dropdown" onClick={toggleDropdown}>
@@ -93,45 +124,22 @@ const Navbar = () => {
                   </div>
                 </>
               ) : (
-                <NavLink to="/login" onClick={handleShowNavbar}>
+                <NavLink
+                  to="/login"
+                  className="nav-login-btn"
+                  // onClick={handleShowNavbar}
+                >
                   Login
                   <i className="fa fa-user" aria-hidden="true"></i>
                 </NavLink>
               )}
-            </li>
-          </ul>
-        </div>
-        <div className="nav-mob-user-elm">
-          {user ? (
-            <>
-              <div className="dropdown" onClick={toggleDropdown}>
-                {user?.name}
-                <i className="fa fa-user" aria-hidden="true"></i>
-
-                {isDropdownOpen && (
-                  <div
-                    className="dropdown-menu"
-                    // onClick={() => setUser(null)}
-                    onClick={handleLogout}
-                  >
-                    <div className="logout-btn dropdown-item">Logout</div>
-                  </div>
-                )}
-              </div>
-            </>
-          ) : (
-            <NavLink
-              to="/login"
-              className="nav-login-btn"
-              // onClick={handleShowNavbar}
-            >
-              Login
-              <i className="fa fa-user" aria-hidden="true"></i>
-            </NavLink>
-          )}
-        </div>
-      </div>
-    </nav>
+            </div>
+          </div>
+        </nav>
+      ) : (
+        <nav className="navbar"></nav>
+      )}
+    </>
   );
 };
 

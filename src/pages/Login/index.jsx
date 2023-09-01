@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import loginBg from "../../assets/images/loginBg.png";
 import "./style.css";
 import logo from "../../assets/images/logoBeyondBank.png";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
+
+import users from "../../utils/users.json";
 
 // const Login = () => {
 //   return (
@@ -42,35 +44,64 @@ const LoginForm = () => {
   // const { login } = useAuth();
   const { login } = useContext(UserContext);
 
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [formErr, setFormErr] = useState(false);
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // setUser({
-    //   id: "1",
-    //   name: "Alex",
-    //   email: "alex@gmail.com",
-    // });
-    login({
-      id: "1",
-      name: "Alex",
-      email: "alex@gmail.com",
-    });
-    navigate("/");
+
+    try {
+      const user = users.filter(
+        (user) => user.email === email && user.password === pass
+      );
+      if (!user.length) {
+        setFormErr(true);
+        return console.log("Invalid user credentials");
+      }
+
+      login(user[0]);
+      setFormErr(false);
+      navigate("/");
+    } catch (error) {
+      console.log("error loging in -> ", error);
+    }
+  };
+
+  const inputHandler = (e, setter) => {
+    setter(e.target.value);
   };
 
   return (
     // <div className="login-form">
     <form className="login-form" onSubmit={handleLogin}>
       <h3 className="form-title">SIGN IN</h3>
-      <input type="text" name="username" id="username" placeholder="Username" />
       <input
+        className={formErr ? "err-inp" : ""}
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Username"
+        onChange={(e) => inputHandler(e, setEmail)}
+        value={email}
+        required
+      />
+      <input
+        className={formErr ? "err-inp" : ""}
         type="password"
         name="password"
         id="password"
         placeholder="Password"
+        value={pass}
+        onChange={(e) => inputHandler(e, setPass)}
+        required
       />
       <div>
-        <input type="checkbox" name="saveUser" id="saveUser" />
-        <label htmlFor="saveUser">Save Username</label>
+        <div className="frm-save">
+          <input type="checkbox" name="saveUser" id="saveUser" />
+          <label htmlFor="saveUser">Save Username</label>
+        </div>
+        {formErr && <span className="login-error">Invalid Credentials!</span>}
       </div>
       <input type="submit" value="Login" />
     </form>

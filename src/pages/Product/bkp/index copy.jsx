@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./style.css";
 
-import products from "../../utils/products.json";
-import FeatureCard from "../../components/FeatureCard";
+import products from "../../../utils/products.json";
+import FeatureCard from "../../../components/FeatureCard";
 import logo from "../../assets/images/logoBeyondBank.png";
-import { useWebInteraction } from "../../context/WebInteractionContext";
+import { useWebInteraction } from "../../../context/WebInteractionContext";
 
 const Product = () => {
   const { WebInteraction, updateWebInteraction } = useWebInteraction();
@@ -28,7 +28,7 @@ const Product = () => {
     updateWebInteraction((prevData) => {
       if (!Object.values(prevData).includes(title)) {
         // console.log("prevData=> ", prevData);
-        let key = `menu${Object.keys(prevData).length + 1}`;
+        let key = `menu${Object.keys(prevData).length+1}`;
         // console.log("key==> ", key, title);
 
         let newEntry = { [key]: title };
@@ -67,9 +67,6 @@ const Product = () => {
         <img className="page-logo" src={logo} alt="logo" />
       </div>
       <section className="product-info">
-        {/* <div className="product-off-txt-cont">
-          <p className="product-off-text">What We're Offering</p>
-        </div> */}
         <h4 className="product-title">{title}</h4>
         <div className="product-heading">{heading} </div>
         <div className="product-features-container">

@@ -34,38 +34,6 @@
   background: white;
 }
 
-.product-off-text {
-  display: inline-flex;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 400;
-  width: 100%;
-  color: grey;
-  margin: 0 auto;
-  line-height: 1;
-  position: relative;
-  /* top: -10px; */
-}
-/*
-{
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    align-self: center;
-}
-*/
-
-.product-off-text::after {
-  content: "";
-  width: 43px;
-  height: 3px;
-  background-color: #00498e;
-  border-radius: 4px;
-  margin-left: 10px;
-}
-
 .product-title {
   color: rgb(91, 91, 91);
   font-size: 47px;

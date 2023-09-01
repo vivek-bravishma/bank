@@ -15,22 +15,23 @@ import Login from "./pages/Login";
 // import { useAuth } from "./hooks/useAuth";
 // import { AuthContext } from "./context/AuthContext";
 // import { AuthProvider } from "./context/AuthContext";
-import { useMemo, useState } from "react";
+// import { useMemo, useState } from "react";
 import { UserContext } from "./context/UserContext";
 import { useAuth } from "./hooks/useAuth";
+import { WebInteractionProvider } from "./context/WebInteractionContext";
 
-// const PrivateRoute = ({
-//   path,
-//   component: Component,
-//   isAuthenticated,
-//   ...rest
-// }) => {
-//   const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
-//   return userPresent ? Component : <Navigate to="/login" replace />;
-// };
+const PrivateRoute = ({
+  path,
+  component: Component,
+  isAuthenticated,
+  ...rest
+}) => {
+  const userPresent = JSON.parse(localStorage.getItem("user")) ? true : false;
+  return userPresent ? Component : <Navigate to="/login" replace />;
+};
 
 const AuthRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-  const userPresent = JSON.parse(localStorage.getItem("users")) ? true : false;
+  const userPresent = JSON.parse(localStorage.getItem("user")) ? true : false;
   console.log("user==> ", userPresent);
   return userPresent ? <Navigate to="/" /> : Component;
 };
@@ -38,7 +39,8 @@ const AuthRoute = ({ component: Component, isAuthenticated, ...rest }) => {
 const routes = [
   {
     path: "/",
-    element: <Home />,
+    // element: <Home />,
+    element: <PrivateRoute component={<Home />} />,
   },
   {
     path: "/login",
@@ -46,15 +48,18 @@ const routes = [
   },
   {
     path: "/products",
-    element: <Products />,
+    // element: <Products />,
+    element: <PrivateRoute component={<Products />} />,
   },
   {
     path: "/product/:productId",
-    element: <Product />,
+    // element: <Product />,
+    element: <PrivateRoute component={<Product />} />,
   },
   {
     path: "/services",
-    element: <Home />,
+    // element: <Home />,
+    element: <PrivateRoute component={<Home />} />,
   },
   // {
   //   path: "/about",
@@ -79,20 +84,22 @@ function App() {
   return (
     // <AuthContext.Provider value={{ user, login, logout }}>
     <UserContext.Provider value={providerVal}>
-      <div className="App">
-        <Router>
-          <Navbar />
-          <Routes>
-            {routes.map((route, index) => (
-              <Route
-                key={index}
-                path={`/${route.path}`}
-                element={route.element}
-              />
-            ))}
-          </Routes>
-        </Router>
-      </div>
+      <WebInteractionProvider>
+        <div className="App">
+          <Router>
+            <Navbar />
+            <Routes>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={`/${route.path}`}
+                  element={route.element}
+                />
+              ))}
+            </Routes>
+          </Router>
+        </div>
+      </WebInteractionProvider>
     </UserContext.Provider>
     // </AuthContext.Provider>
   );

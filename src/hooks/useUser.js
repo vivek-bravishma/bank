@@ -27,7 +27,7 @@ import { UserContext } from "../context/UserContext";
 
 export const useUser = () => {
   const { user, login, logout } = useContext(UserContext);
-  const { setItem } = useLocalStorage();
+  const { setItem ,removeItem} = useLocalStorage();
 
   const addUser = (user) => {
     user = user;
@@ -37,7 +37,8 @@ export const useUser = () => {
 
   const removeUser = () => {
     console.log("removeUser");
-    setItem("user", "");
+    // setItem("user", "");
+    removeItem('user')
     logout();
   };
   return { user, addUser, removeUser };

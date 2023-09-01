@@ -57,20 +57,34 @@ input[type="password"] {
   border: none;
 }
 
+.frm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-error {
+  /* visibility: hidden; */
+  /* display: none; */
+  color: #eb1d23;
+  font-weight: 600;
+}
+
+.err-inp {
+  border: 2px solid #eb1d23;
+}
+
 @media (max-width: 768px) {
   .content-container {
-
   }
 }
 
 @media (max-width: 600px) {
   .content-container {
-
   }
 }
 
 @media (max-width: 400px) {
   .content-container {
-
   }
 }
