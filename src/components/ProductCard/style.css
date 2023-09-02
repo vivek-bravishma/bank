@@ -92,3 +92,9 @@
 
 @media (max-width: 600px) {
 }
+
+@media (max-width: 350px) {
+  .product-card-container {
+    width: 90%;
+  }
+}

@@ -3,6 +3,7 @@ import React from "react";
 import products from "../../utils/products.json";
 import ProductCard from "../../components/ProductCard";
 import "./style.css";
+import LoanCalc from "../../components/LoanCalc";
 
 const Products = () => {
   return (
@@ -23,6 +24,7 @@ const Products = () => {
           ))}
         </div>
       </div>
+      <LoanCalc />
     </div>
   );
 };

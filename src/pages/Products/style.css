@@ -3,7 +3,7 @@
 }
 
 .products-content-container {
-  background-color: #fff;
+  background-color: #eaedf1;
   display: flex;
   flex-direction: column;
   /* align-items: center;  */
@@ -13,7 +13,7 @@
 }
 
 .products-card-container {
-  background-color: #fff;
+  background-color: #eaedf1;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,0 +1,257 @@
+/* .how-works {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.how-works__image {
+    border-radius: 10px;
+}
+@media (max-width: 767px) {
+    .how-works__image {
+        max-width: 100%;
+   }
+}
+.how-works__content {
+    position: relative;
+    margin-top: 60px;
+    border-radius: 10px;
+    padding: 100px;
+    padding-bottom: 95px;
+    background-color: #fff;
+    box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
+}
+@media (max-width: 1199px) {
+    .how-works__content {
+        padding: 50px;
+   }
+}
+@media (max-width: 480px) {
+    .how-works__content {
+        padding: 40px 30px;
+   }
+}
+.how-works .block-title h2 {
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+}
+.how-works .block-text {
+    margin-top: -10px;
+} */
+
+.gray-bg {
+  background: #eff2f6;
+  padding: 50px 0px;
+}
+.white-bg {
+  background: #fff;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.gray-bg.ptp-20 {
+  background: #eff2f6;
+  padding: 20px 0px;
+}
+.width25 {
+  width: 100%;
+}
+
+.contener {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.center {
+  text-align: center;
+}
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+
+.mt25 {
+  margin-top: 25px;
+}
+.img-responsive {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+.xxs-block {
+  display: block;
+}
+.xs-block {
+  display: block;
+}
+.ssm-none {
+  display: none;
+}
+.sm-block {
+  display: none;
+}
+.lg-block {
+  display: none;
+}
+.mt-33 {
+  margin-top: -15px;
+}
+.xs-max-width {
+  max-width: 70%;
+}
+
+@media (min-width: 576px) {
+  .xxs-block {
+    display: none;
+  }
+  .ssm-none {
+    display: block;
+  }
+  .w-100 {
+    width: 100%;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .width33 {
+    width: 33.3%;
+  }
+  .width50 {
+    width: 50%;
+  }
+  .width25 {
+    width: 25%;
+  }
+  .max-width {
+    width: 70%;
+  }
+  .xs-max-width {
+    max-width: 100%;
+  }
+  /*==Header CSS== */
+  .login-box img {
+    max-width: 250px;
+  }
+  .logo-img {
+    max-width: 80px;
+  }
+  .menu img {
+    max-width: 70px;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /*==Banner CSS== */
+
+  /*==Content CSS== */
+
+  /*==Footer CSS== */
+}
+
+@media (min-width: 768px) {
+  .xs-block {
+    display: none;
+  }
+  .sm-block {
+    display: block;
+  }
+  .lg-block {
+    display: none;
+  }
+
+  .login-box img {
+    max-width: 300px;
+  }
+  .login-box {
+    margin-top: -150px;
+  }
+  .contener {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  /*==Header CSS== */
+  .logo-img {
+    max-width: 146px;
+  }
+  .menu img {
+    max-width: 100px;
+    margin-top: 5px;
+  }
+  /*==Banner CSS== */
+
+  /*==Content CSS== */
+
+  /*==Footer CSS== */
+}
+
+@media (min-width: 992px) {
+  /*==Header CSS== */
+  .xs-block {
+    display: none;
+  }
+  .sm-block {
+    display: none;
+  }
+  .lg-block {
+    display: block;
+  }
+  .login-box img {
+    max-width: inherit;
+  }
+  .screen1-bg {
+    padding-bottom: 80px;
+  }
+  /*==Banner CSS== */
+
+  /*==Content CSS== */
+
+  /*==Footer CSS== */
+}
+
+@media (min-width: 1100px) {
+  .mt-33 {
+    margin-top: -15px;
+  }
+  .w-100-lg {
+    width: 100%;
+  }
+  /*==Header CSS== */
+  .login-box {
+    margin-top: -200px;
+  }
+  /*==Banner CSS== */
+  .w-100 {
+    width: auto;
+  }
+  /*==Content CSS== */
+
+  /*==Footer CSS== */
+}
+
+@media (min-width: 1200px) {
+  /*== Commen CSS == */
+
+  /*==Header CSS== */
+
+  /*==Banner CSS== */
+
+  /*==Content CSS== */
+
+  /*==Footer CSS== */
+}
+
+@media (min-width: 1600px) {
+  /*==Header CSS== */
+
+  /*==Banner CSS== */
+
+  /*==Content CSS== */
+
+  /*==Footer CSS== */
+}

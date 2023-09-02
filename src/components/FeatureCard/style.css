@@ -1,6 +1,7 @@
 .feature-card-container {
   height: 120px;
   width: 200px;
+  width: 30%;
   /* background: red; */
   color: black;
   display: flex;
@@ -9,7 +10,8 @@
   justify-content: center;
   /* border: 1px solid black; */
   border-radius: 5px;
-  padding: 2%;
+  padding: 7% 2%;
+  gap: 1rem;
   /* background: white; */
   background: #ebebeb;
 }
@@ -62,5 +64,16 @@
   .feature-card-desc {
     font-size: 0.6rem;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-features-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .feature-card-container {
+    /* height: 120px; */
+    width: 75%;
   }
 }

@@ -6,6 +6,7 @@ import products from "../../utils/products.json";
 import FeatureCard from "../../components/FeatureCard";
 import logo from "../../assets/images/logoBeyondBank.png";
 import { useWebInteraction } from "../../context/WebInteractionContext";
+import HowWorks from "../../components/HowWorks";
 
 const Product = () => {
   const { WebInteraction, updateWebInteraction } = useWebInteraction();
@@ -66,18 +67,21 @@ const Product = () => {
       <div className="content-container product-content">
         <img className="page-logo" src={logo} alt="logo" />
       </div>
-      <section className="product-info">
-        {/* <div className="product-off-txt-cont">
+      <section className="product-info ">
+        <div className="contener clear">
+          {/* <div className="product-off-txt-cont">
           <p className="product-off-text">What We're Offering</p>
         </div> */}
-        <h4 className="product-title">{title}</h4>
-        <div className="product-heading">{heading} </div>
-        <div className="product-features-container">
-          {features.map((feature, index) => (
-            <FeatureCard data={feature} key={index} />
-          ))}
+          <h4 className="product-title">{title}</h4>
+          <div className="product-heading">{heading} </div>
+          <div className="product-features-container d-flex">
+            {features.map((feature, index) => (
+              <FeatureCard data={feature} key={index} />
+            ))}
+          </div>
         </div>
       </section>
+      <HowWorks />
     </div>
   );
 };
