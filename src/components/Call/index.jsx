@@ -41,11 +41,17 @@ const Call = ({ user }) => {
     data: data,
   };
 
+  const initiateCall = () => {
+    const phoneNumber = "+919822848605"; // Replace with the phone number you want to call
+    window.open(`tel:${phoneNumber}`);
+  };
+
   const callBtnHandler = async () => {
     // console.log("useWebInteraction =-=->", WebInteraction);
     try {
       let resp = await axios.request(config);
       console.log("Call resp===> ", resp.data);
+      initiateCall()
     } catch (error) {
       console.log("Call err===> ", error);
     }

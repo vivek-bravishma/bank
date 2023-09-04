@@ -1,12 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import loginBg from "../../assets/images/loginBg.png";
 import "./style.css";
 import logo from "../../assets/images/logoBeyondBank.png";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import axios from "axios";
 // import { useAuth } from "../../hooks/useAuth";
 
-import users from "../../utils/users.json";
+// import users from "../../utils/users.json";
+let users = null;
+
+let config = {
+  method: "get",
+  url: "http://gitex2023bank.lab.bravishma.com:6514/userdetails/userdetails.json",
+  headers: {},
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    users = response.data;
+    console.log("userss=> ", users);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // const Login = () => {
 //   return (

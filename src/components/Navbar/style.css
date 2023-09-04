@@ -56,7 +56,7 @@
   width: 100%;
 }
 
-.nav-elements ul i {
+.nav-elements ul i , .nav-mob-user-elm i{
   margin: 0 10px;
 }
 
