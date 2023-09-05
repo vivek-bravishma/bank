@@ -7,25 +7,26 @@ import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 // import { useAuth } from "../../hooks/useAuth";
 
-import users from "../../utils/users.json";
-// let users = null;
+// import users from "../../utils/users.json";
+let users = null;
 
-// let config = {
-//   method: "get",
+let config = {
+  method: "get",
 //   url: "http://gitex2023bank.lab.bravishma.com:6514/userdetails/userdetails.json",
-//   headers: {},
-// };
+  url: "https://gitex2023bank.lab.bravishma.com/userdetails/userdetails.json",
+  headers: {},
+};
 
-// axios
-//   .request(config)
-//   .then((response) => {
-//     console.log(JSON.stringify(response.data));
-//     users = response.data;
-//     console.log("userss=> ", users);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+axios
+  .request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    users = response.data;
+    console.log("userss=> ", users);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // const Login = () => {
 //   return (
