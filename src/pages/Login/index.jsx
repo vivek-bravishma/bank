@@ -12,7 +12,7 @@ let users = null;
 
 let config = {
   method: "get",
-//   url: "http://gitex2023bank.lab.bravishma.com:6514/userdetails/userdetails.json",
+  //   url: "http://gitex2023bank.lab.bravishma.com:6514/userdetails/userdetails.json",
   url: "https://gitex2023bank.lab.bravishma.com/userdetails/userdetails.json",
   headers: {},
 };
@@ -64,8 +64,8 @@ const LoginForm = () => {
   // const { login } = useAuth();
   const { login } = useContext(UserContext);
 
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [email, setEmail] = useState("alex@gmail.com");
+  const [pass, setPass] = useState("1234");
   const [formErr, setFormErr] = useState(false);
 
   const handleLogin = (e) => {
@@ -117,13 +117,13 @@ const LoginForm = () => {
         required
       />
       <div>
-        <div className="frm-save">
+        {/* <div className="frm-save">
           <input type="checkbox" name="saveUser" id="saveUser" />
           <label htmlFor="saveUser">Save Username</label>
-        </div>
+        </div> */}
         {formErr && <span className="login-error">Invalid Credentials!</span>}
+        <input type="submit" value="Login" />
       </div>
-      <input type="submit" value="Login" />
     </form>
     // {/* </div> */}
   );

@@ -37,6 +37,11 @@
 .form-title {
   color: #fff;
 }
+.login-form div {display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 10px;
+}
 
 .login-form input[type="text"],
 input[type="password"] {
