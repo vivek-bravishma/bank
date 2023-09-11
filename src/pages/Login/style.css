@@ -1,5 +1,5 @@
-.login-container {
-}
+/* .login-container {
+} */
 
 .login-bg-container {
   height: calc(75vh - 60px);
@@ -37,7 +37,8 @@
 .form-title {
   color: #fff;
 }
-.login-form div {display: flex;
+.login-form div {
+  display: flex;
   /* align-items: center; */
   flex-direction: column;
   gap: 10px;
@@ -80,16 +81,16 @@ input[type="password"] {
 }
 
 @media (max-width: 768px) {
-  .content-container {
-  }
+  /* .content-container {
+  } */
 }
 
 @media (max-width: 600px) {
-  .content-container {
-  }
+  /* .content-container {
+  } */
 }
 
 @media (max-width: 400px) {
-  .content-container {
-  }
+  /* .content-container {
+  } */
 }
