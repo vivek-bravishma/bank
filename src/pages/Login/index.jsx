@@ -5,44 +5,26 @@ import logo from "../../assets/images/logoBeyondBank.png";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
+import config from "../../utils/config";
 // import { useAuth } from "../../hooks/useAuth";
 
 // import users from "../../utils/users.json";
-let users = null;
-
-let config = {
-  method: "get",
-  //   url: "http://gitex2023bank.lab.bravishma.com:6514/userdetails/userdetails.json",
-  url: "https://gitex2023bank.lab.bravishma.com/userdetails/userdetails.json",
-  headers: {},
-};
-
-axios
-  .request(config)
-  .then((response) => {
-    console.log(JSON.stringify(response.data));
-    users = response.data;
-    console.log("userss=> ", users);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-// const Login = () => {
-//   return (
-//     <div className="login-container">
-//       <div
-//         className="login-bg-container"
-//         style={{ backgroundImage: `url(${loginBg})` }}
-//       >
-//         <img className="page-logo" src={logo} alt="logo" />
-//       </div>
-//       <LoginForm />
-//     </div>
-//   );
-// };
 
 const Login = () => {
+  const [users, setUsers] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(config.userDetailsUrl)
+      .then((response) => {
+        setUsers(response.data);
+        console.log("fetched users=> ", users);
+      })
+      .catch((error) => {
+        console.log("user fetching error", error);
+      });
+  }, []);
+
   return (
     <div className="main-container login-container">
       <section
@@ -53,13 +35,13 @@ const Login = () => {
       <div className="content-container login-content-container">
         <img className="page-logo" src={logo} alt="logo" />
 
-        <LoginForm />
+        <LoginForm users={users} />
       </div>
     </div>
   );
 };
 
-const LoginForm = () => {
+const LoginForm = ({ users }) => {
   const navigate = useNavigate();
   // const { login } = useAuth();
   const { login } = useContext(UserContext);

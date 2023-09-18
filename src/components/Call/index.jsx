@@ -3,55 +3,37 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 import { useWebInteraction } from "../../context/WebInteractionContext";
+import config from "../../utils/config";
 
-const apiUrl =
-  "https://us-central1-nipon-test-350808.cloudfunctions.net/public_updateProfile_MongoDB_FSI_Preview";
-
-// let data = JSON.stringify({
-//   operation: "updateProfile",
-//   profileName: "alexsmithfsipreviewvoice",
-//   webInteractions: {
-//     menu1: "Car Loan",
-//     menu2: "Personal Loan",
-//   },
-// });
-
-// let config = {
-//   method: "post",
-//   url: "https://us-central1-nipon-test-350808.cloudfunctions.net/public_updateProfile_MongoDB_FSI_Preview",
-//   data: data,
-//   // maxBodyLength: Infinity,
-//   // headers: {
-//   //   "Content-Type": "application/json",
-//   // },
-// };
+const apiUrl = config.callApiUrl;
 
 const Call = ({ user }) => {
   const { WebInteraction } = useWebInteraction();
 
-  let data = JSON.stringify({
+  let data = {
     operation: "updateProfile",
     profileName: user.profileName,
     webInteractions: WebInteraction,
-  });
-
-  let config = {
-    method: "post",
-    url: apiUrl,
-    data: data,
   };
 
   const initiateCall = () => {
-    const phoneNumber = "+919822848605"; // Replace with the phone number you want to call
+    const phoneNumber = config.callNowNumber;
+    console.log("phoneNumber=-=> ", phoneNumber);
     window.open(`tel:${phoneNumber}`);
   };
 
   const callBtnHandler = async () => {
     // console.log("useWebInteraction =-=->", WebInteraction);
     try {
+      data.timeStamp = Date.now();
+      let config = {
+        method: "post",
+        url: apiUrl,
+        data: data,
+      };
       let resp = await axios.request(config);
       console.log("Call resp===> ", resp.data);
-      initiateCall()
+      initiateCall();
     } catch (error) {
       console.log("Call err===> ", error);
     }
